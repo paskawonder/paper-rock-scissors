@@ -1,6 +1,6 @@
 package com.imc.game.runner;
 
-import com.imc.game.player.Player;
+import com.imc.game.model.Player;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

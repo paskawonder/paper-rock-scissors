@@ -1,7 +1,7 @@
-package com.imc.game.move;
+package com.imc.game.strategy;
 
-import com.imc.game.Move;
-import com.imc.game.dto.PlayerIdMove;
+import com.imc.game.model.Move;
+import com.imc.game.model.PlayerIdMove;
 import com.imc.queue.MessageQueue;
 import java.util.List;
 import java.util.Scanner;

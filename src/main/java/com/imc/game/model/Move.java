@@ -1,4 +1,4 @@
-package com.imc.game;
+package com.imc.game.model;
 
 public enum Move {
 

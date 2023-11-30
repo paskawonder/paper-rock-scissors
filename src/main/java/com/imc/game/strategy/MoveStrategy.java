@@ -1,6 +1,6 @@
-package com.imc.game.move;
+package com.imc.game.strategy;
 
-import com.imc.game.Move;
+import com.imc.game.model.Move;
 
 public interface MoveStrategy {
 

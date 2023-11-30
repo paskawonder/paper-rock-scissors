@@ -1,9 +1,10 @@
 package com.imc.game;
 
-import com.imc.game.move.AIEngine;
-import com.imc.game.move.MoveStrategy;
-import com.imc.game.move.UserInteractionSimple;
-import com.imc.game.player.Player;
+import com.imc.game.model.Move;
+import com.imc.game.model.Player;
+import com.imc.game.strategy.AIEngine;
+import com.imc.game.strategy.MoveStrategy;
+import com.imc.game.strategy.UserInteractionSimple;
 import com.imc.game.runner.SingleRunner;
 import com.imc.game.runner.SeriesRunner;
 import com.imc.queue.MessageQueue;

@@ -1,6 +1,6 @@
 package com.imc.game.runner;
 
-import com.imc.game.player.Player;
+import com.imc.game.model.Player;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;

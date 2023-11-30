@@ -1,8 +1,8 @@
 package com.imc.game.runner;
 
-import com.imc.game.Move;
-import com.imc.game.dto.PlayerIdMove;
-import com.imc.game.player.Player;
+import com.imc.game.model.Move;
+import com.imc.game.model.PlayerIdMove;
+import com.imc.game.model.Player;
 import com.imc.queue.MessageQueue;
 import java.util.Map;
 import java.util.logging.Logger;

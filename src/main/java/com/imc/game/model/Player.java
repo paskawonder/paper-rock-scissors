@@ -1,8 +1,6 @@
-package com.imc.game.player;
+package com.imc.game.model;
 
-import com.imc.game.Move;
-import com.imc.game.move.MoveStrategy;
-
+import com.imc.game.strategy.MoveStrategy;
 import java.util.Objects;
 
 public final class Player {

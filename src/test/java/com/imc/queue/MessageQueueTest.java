@@ -1,6 +1,6 @@
 package com.imc.queue;
 
-import com.imc.game.dto.PlayerIdMove;
+import com.imc.game.model.PlayerIdMove;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
