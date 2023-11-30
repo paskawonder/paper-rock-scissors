@@ -15,7 +15,7 @@ The outcome of the series can be:
 To start a series of games, build the application and run it, passing a desired number of games as the command line argument.
 
 1. mvn package
-2. java -jar target/game-1.0.jar "{{number_of_games}}"
+2. java -jar target/game-1.0.jar {{number_of_games}}
 
 ### Version 1.0
 * at most 127 games within the same series
