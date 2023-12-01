@@ -30,6 +30,11 @@ public final class SingleRunner {
             move2 = player2.nextMove();
             messageQueue.addMsg(MessageQueue.TOPIC_GAME_SINGLE_PLAYER_MOVE, new PlayerIdMove(player1.getId(), move1));
             messageQueue.addMsg(MessageQueue.TOPIC_GAME_SINGLE_PLAYER_MOVE, new PlayerIdMove(player2.getId(), move2));
+            /*
+            Requirement: each player simultaneously opens his/her hand to display a symbol
+            Question: display to whom, to each other, or only to a referee?
+                    If the latter, the following two lines may be replaced by long polling on the player's side.
+             */
             player1.notifyOfMove();
             player2.notifyOfMove();
             if (move1 == move2) {
