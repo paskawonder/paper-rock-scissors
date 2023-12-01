@@ -9,6 +9,8 @@ The quickest learner will benefit from learning the pattern. One who checks the 
 The same applies to computers and distributed systems.
 
 ### Game Rules
+A single game can not result in a draw, but a series of games can.
+
 The winner of a single game is determined by the following schema:
 1. paper beats (wraps) rock
 2. rock beats (blunts) scissors
