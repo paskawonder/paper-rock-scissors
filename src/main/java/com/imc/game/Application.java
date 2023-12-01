@@ -33,7 +33,7 @@ public final class Application {
         Player computer = new Player(properties.getProperty("game.ai.player.name"), aiEngine);
         SeriesRunner seriesRunner = new SeriesRunner(new SingleRunner(messageQueue));
         SeriesOutcome outcome = seriesRunner.play(Byte.parseByte(args[0]), user, computer);
-        LOGGER.log(Level.INFO, "The Games Series finished after {0}", outcome.gamesPlayed());
+        LOGGER.log(Level.INFO, "The Games Series finished after {0} game{1}", new Object[] {outcome.gamesPlayed(), outcome.gamesPlayed() == 1 ? "" : "s"});
         LOGGER.log(Level.INFO, "The Final Result is {0}", outcome.getWinnerId().map(id -> "Victory of " + id).orElse("Draw"));
     }
 
