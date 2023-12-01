@@ -8,7 +8,7 @@ A game can publish moves and results, and players process them up to their speed
 The quickest learner will benefit from learning the pattern. One who checks the result every ten minutes will lag but save on the costly thinking on-the-go process and reflect on the chosen strategy only afterward.
 The same applies to computers and distributed systems.
 
-## Game Rules
+### Game Rules
 The winner of a single game is determined by the following schema:
 1. paper beats (wraps) rock
 2. rock beats (blunts) scissors
