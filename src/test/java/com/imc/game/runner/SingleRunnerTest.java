@@ -29,8 +29,8 @@ class SingleRunnerTest {
 
     @Test
     void playTest() {
-        Mockito.when(player1.nextMove()).thenReturn(Move.SCISSORS).thenReturn(Move.ROCK);
-        Mockito.when(player2.nextMove()).thenReturn(Move.SCISSORS).thenReturn(Move.SCISSORS);
+        Mockito.when(player1.nextMove()).thenReturn(Move.SCISSORS, Move.ROCK);
+        Mockito.when(player2.nextMove()).thenReturn(Move.SCISSORS, Move.SCISSORS);
         Assertions.assertEquals(PLAYER_1_ID, subject.play(player1, player2));
         Mockito.verify(player1, Mockito.times(2)).nextMove();
         Mockito.verify(player2, Mockito.times(2)).nextMove();
@@ -41,32 +41,32 @@ class SingleRunnerTest {
 
     @Test
     void playTestRSSR() {
-        Mockito.when(player1.nextMove()).thenReturn(Move.ROCK);
-        Mockito.when(player2.nextMove()).thenReturn(Move.SCISSORS);
+        Mockito.when(player1.nextMove()).thenReturn(Move.ROCK, Move.SCISSORS);
+        Mockito.when(player2.nextMove()).thenReturn(Move.SCISSORS, Move.ROCK);
         Assertions.assertEquals(PLAYER_1_ID, subject.play(player1, player2));
-        Mockito.when(player1.nextMove()).thenReturn(Move.SCISSORS);
-        Mockito.when(player2.nextMove()).thenReturn(Move.ROCK);
         Assertions.assertEquals(PLAYER_2_ID, subject.play(player1, player2));
+        Mockito.verify(player1, Mockito.times(2)).nextMove();
+        Mockito.verify(player2, Mockito.times(2)).nextMove();
     }
 
     @Test
     void playTestPRRP() {
-        Mockito.when(player1.nextMove()).thenReturn(Move.PAPER);
-        Mockito.when(player2.nextMove()).thenReturn(Move.ROCK);
+        Mockito.when(player1.nextMove()).thenReturn(Move.PAPER, Move.ROCK);
+        Mockito.when(player2.nextMove()).thenReturn(Move.ROCK, Move.PAPER);
         Assertions.assertEquals(PLAYER_1_ID, subject.play(player1, player2));
-        Mockito.when(player1.nextMove()).thenReturn(Move.ROCK);
-        Mockito.when(player2.nextMove()).thenReturn(Move.PAPER);
         Assertions.assertEquals(PLAYER_2_ID, subject.play(player1, player2));
+        Mockito.verify(player1, Mockito.times(2)).nextMove();
+        Mockito.verify(player2, Mockito.times(2)).nextMove();
     }
 
     @Test
     void playTestSPPS() {
-        Mockito.when(player1.nextMove()).thenReturn(Move.SCISSORS);
-        Mockito.when(player2.nextMove()).thenReturn(Move.PAPER);
+        Mockito.when(player1.nextMove()).thenReturn(Move.SCISSORS, Move.PAPER);
+        Mockito.when(player2.nextMove()).thenReturn(Move.PAPER, Move.SCISSORS);
         Assertions.assertEquals(PLAYER_1_ID, subject.play(player1, player2));
-        Mockito.when(player1.nextMove()).thenReturn(Move.PAPER);
-        Mockito.when(player2.nextMove()).thenReturn(Move.SCISSORS);
         Assertions.assertEquals(PLAYER_2_ID, subject.play(player1, player2));
+        Mockito.verify(player1, Mockito.times(2)).nextMove();
+        Mockito.verify(player2, Mockito.times(2)).nextMove();
     }
 
 }

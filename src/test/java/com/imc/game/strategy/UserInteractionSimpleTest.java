@@ -25,25 +25,20 @@ class UserInteractionSimpleTest {
 
     @Test
     void consumeGameMovesTest() {
-        Mockito.when(messageQueue.readMsgs(MessageQueue.TOPIC_GAME_SINGLE_PLAYER_MOVE, PLAYER_ID)).thenReturn(List.of(
-                new PlayerIdMove(PLAYER_ID, Move.ROCK), new PlayerIdMove("1", Move.PAPER)
-        ));
+        Mockito.when(messageQueue.readMsgs(MessageQueue.TOPIC_GAME_SINGLE_PLAYER_MOVE, PLAYER_ID)).thenReturn(
+                List.of(new PlayerIdMove(PLAYER_ID, Move.ROCK), new PlayerIdMove("1", Move.PAPER)),
+                List.of(new PlayerIdMove(PLAYER_ID, Move.ROCK), new PlayerIdMove("1", Move.PAPER), new PlayerIdMove("1", Move.PAPER))
+        );
         subject.consumeGameMoves(PLAYER_ID);
-        Mockito.when(messageQueue.readMsgs(MessageQueue.TOPIC_GAME_SINGLE_PLAYER_MOVE, PLAYER_ID)).thenReturn(List.of(
-                new PlayerIdMove(PLAYER_ID, Move.ROCK), new PlayerIdMove("1", Move.PAPER), new PlayerIdMove("1", Move.PAPER)
-        ));
         Assertions.assertThrows(IllegalStateException.class, () -> subject.consumeGameMoves(PLAYER_ID));
     }
 
     @Test
     void getNextMoveTest() {
-        Mockito.when(scanner.nextLine()).thenReturn("1");
+        Mockito.when(scanner.nextLine()).thenReturn("1", "2", "3", "4");
         Assertions.assertSame(Move.ROCK, subject.getNextMove(PLAYER_ID));
-        Mockito.when(scanner.nextLine()).thenReturn("2");
         Assertions.assertSame(Move.PAPER, subject.getNextMove(PLAYER_ID));
-        Mockito.when(scanner.nextLine()).thenReturn("3");
         Assertions.assertSame(Move.SCISSORS, subject.getNextMove(PLAYER_ID));
-        Mockito.when(scanner.nextLine()).thenReturn("4");
         Assertions.assertThrows(IllegalArgumentException.class, () -> subject.getNextMove(PLAYER_ID));
     }
 
