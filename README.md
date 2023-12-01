@@ -24,8 +24,9 @@ To start a series of games, build the application and run it, passing a desired 
 
 ### Design Thoughts
 Conventionally, players immediately and simultaneously observe each other's hands.
-However, players can be distant with a referee located halfway. In this case, it will take time to recognize the opponent's move and the game outcome may be heard first.
-Players only need to synchronously make their moves. They can be asynchronously notified of the opponents' hand and results.
+However, players can be distant with a referee located halfway or play blindfolded. In this case, they will take time to recognize the opponent's move and may hear the game outcome first.
+Players only need to synchronously make their moves. They can be asynchronously notified of the opponents' hands and game results.
 A game can publish moves and results, and players process them up to their speed. 
-The quickest learner will benefit from learning the pattern, one who checks the result every ten minutes will lag but will save on the costly thinking process.
+The quickest learner will benefit from learning the pattern. One who checks the result every ten minutes will lag but save on the costly thinking on-the-go process and reflect on the chosen strategy only afterward.
 The same applies to computers and distributed systems.
+
